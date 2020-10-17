@@ -1,0 +1,43 @@
+<html>
+    {% load static %}
+    <head>
+        <title>AdAstraX</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu">
+                <ul>
+                    <li class="logo"><img src="{% static 'LOGO_white.png' %}"></li>
+                    <li class="active">Home</li>
+                    <li>Services</li>
+                    <li>Product</li>
+                    <li>Contact Us</li>
+                    <li><a href="{% url 'login' %}" class="login-btn"><span>Login</span></a></li>
+                </ul>
+            </div>
+            <div class="banner">
+                <div class="platform-text">
+                    <h1>Study in the best online school <br>in the whole damn world!</h1>
+                    <p>Study! Study! Study! Study! Study!<br>Study! Study! Study! Study! Study!<br>Study! Study! Study! </p>
+                    <div class="play-btn">
+                        <div class="play-btn-inner"><i class="fa fa-play"></i></div>
+                        <small><b>LEARN MORE</b></small>
+                    </div>
+                </div>
+                <div class="platform-picture">
+                    <img src="{% static 'head.png' %}">
+                </div>
+            </div>
+            <div class="social-icons">
+                <ul>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+
+<title>AdAstraX</title>
+<body>
+    <div class="loginbox">
+        <img src="{% static 'student-hat.png' %}" class="avatar">
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        Username:
+        <br>
+        <input type="text" name="username">
+        <br>
+        Password:
+        <br>
+        <input type="password" name="password">
+        <br>
+
+        <br>
+        <input class="btn btn-primary" type="submit" value="Login">
+        {% if error %}
+        {{ error }}
+        <br>
+        <br>
+        {% endif %}
+
+    </form>
+</div>
+</body>
+
+</html>
