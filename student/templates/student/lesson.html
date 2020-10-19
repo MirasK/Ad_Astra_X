@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>AdAstraX</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'lesson.css' %}"/>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
@@ -77,9 +77,9 @@
 		            </a>
 		          </li>
 		          <li>
-		            <a href="{% url 'stats' %}" class="active">
-		              <span class="icon"><i class="fas fa-address-card"></i></span>
-		              <span class="list">Statistics</span>
+		            <a href="{% url 'lesson' %}" class="active">
+		              <span class="icon"><i class="fas fa-video"></i></span>
+		              <span class="list">Enter the Lesson</span>
 		            </a>
 		          </li>
 		          <li>
@@ -109,18 +109,54 @@
 	    </div>
 
 	    <div class="container">
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
+	    	<section>
+				<div id="drawingTools">
+					<div id="colors">
+						<button id="black" onclick="changeColor('black')"></button>
+						<button id="white" onclick="changeColor('white')"></button>
+						<button id="red" onclick="changeColor('red')"></button>
+						<button id="green" onclick="changeColor('green')"></button>
+						<button id="blue" onclick="changeColor('blue')"></button>
+					</div>
+					<div id="otherTools">
+						<button id="clearCanvas" onclick="clearCanvas()">Clear</button>
+					</div>
+				</div>
+				<canvas id="canvas" width="800" height="500"></canvas>
+			</section>
+			<!-- <script src="{% static 'lesson.js' %}"></script> -->
+			<script type="text/javascript">
+				var canvas = document.getElementById('canvas');
+				var context = canvas.getContext('2d');
+				context.lineWidth = 5;
+				var down = false;
+
+				canvas.addEventListener('mousemove', draw);
+
+				canvas.addEventListener('mousedown', function()
+				{
+					down = true;
+					context.beginPath();
+					context.moveTo(xPos, yPos);
+					canvas.addEventListener('mousemove', draw);
+				});
+
+				canvas.addEventListener('mouseup', function() { down == false; });
+
+				function draw(e){
+					xPos = e.clientX - canvas.offsetLeft;
+					yPos = e.clientY - canvas.offsetTop;
+
+					if (down == true){
+						context.lineTo(xPos, yPos);
+						context.stroke;
+					}
+				}
+
+				function changeColor(color) { context.strokeStyle = color; }
+				function clearCanvas() { context.clearRect(0, 0, canvas.width, canvas.height); }
+
+			</script>
 	    </div>
 	</div>
 </div>

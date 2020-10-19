@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Student
 
 def home(request):
     return render(request, 'student/home.html')
@@ -46,8 +47,8 @@ def dashboard(request):
 def payment(request):
     return render(request, 'student/payment.html')
 
-def stats(request):
-    return render(request, 'student/stats.html')
+def lesson(request):
+    return render(request, 'student/lesson.html')
 
 def schedule(request):
     return render(request, 'student/schedule.html')

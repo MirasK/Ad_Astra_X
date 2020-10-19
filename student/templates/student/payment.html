@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>AdAstraX</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'profile.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'payment.css' %}"/>
 	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script>
@@ -77,9 +77,9 @@
 		            </a>
 		          </li>
 		          <li>
-		            <a href="{% url 'stats' %}">
-		              <span class="icon"><i class="fas fa-address-card"></i></span>
-		              <span class="list">Statistics</span>
+		            <a href="{% url 'lesson' %}">
+		              <span class="icon"><i class="fas fa-video"></i></span>
+		              <span class="list">Enter the Lesson</span>
 		            </a>
 		          </li>
 		          <li>
@@ -109,22 +109,48 @@
 	    </div>
 
 	    <div class="container">
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
-	    	<div class="item_wrap">
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    		<div class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum omnis nihil aut aperiam adipisci suscipit ullam sunt saepe cupiditate quam distinctio officiis tempore laudantium, animi amet corrupti ratione est commodi! Sunt tempora quod magnam optio, reiciendis veritatis, necessitatibus eos molestias facilis reprehenderit maiores ipsum quaerat placeat laborum, a aspernatur corporis.</div>
-	    	</div>
+	    	<div class="payment">
+				<div class="payment-logo">
+				  <p>$</p>
+				</div>
+				
+				
+				<h2>Payment Gateway</h2>
+				<div class="form">
+				  <div class="card space icon-relative">
+					<label class="label">Card holder:</label>
+					<input type="text" class="input" placeholder="Name Surname">
+					<i class="fas fa-user"></i>
+				  </div>
+				  <div class="card space icon-relative">
+					<label class="label">Card number:</label>
+					<input type="text" class="input" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+					<i class="far fa-credit-card"></i>
+				  </div>
+				  <div class="card-grp space">
+					<div class="card-item icon-relative">
+					  <label class="label">Expiry date:</label>
+					  <input type="text" name="expiry-data" class="input" data-mask="00 / 00"  placeholder="00 / 00">
+					  <i class="far fa-calendar-alt"></i>
+					</div>
+					<div class="card-item icon-relative">
+					  <label class="label">CVC:</label>
+					  <input type="text" class="input" data-mask="000" placeholder="000">
+					  <i class="fas fa-lock"></i>
+					</div>
+				  </div>
+					
+				  <div class="btn">
+					Pay
+				  </div> 
+				  
+				</div>
+			  </div>
 	    </div>
 	</div>
 </div>
-	
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 
 </body>
 </html>

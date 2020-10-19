@@ -77,9 +77,9 @@
 		            </a>
 		          </li>
 		          <li>
-		            <a href="{% url 'stats' %}">
-		              <span class="icon"><i class="fas fa-address-card"></i></span>
-		              <span class="list">Statistics</span>
+		            <a href="{% url 'lesson' %}">
+		              <span class="icon"><i class="fas fa-video"></i></span>
+		              <span class="list">Enter the Lesson</span>
 		            </a>
 		          </li>
 		          <li>
@@ -118,22 +118,66 @@
 	    	<div class="profile">
 	    		<div class="bio">
 					<img src="{% static 'head.jpg' %}" alt="">
-					<span>
+					<span class="name">
 						<h1>{{ user.username }}</h1>
 						<i class="fas fa-map-pin"><p>Almaty</p></i>
 						<i class="fas fa-exclamation"><p>To Change the Photo - Click on It</p></i>
 					</span>
-					<i class="fas fa-male"><p>Man</p></i>
+					<span class="edit">
+						<i class="fas fa-male"><p>Man</p></i>
+						<i class="fab fa-mandalorian"><p>20 y.o.</p></i>
+						<a href="#"><i class="fas fa-pen"><p>Edit Bio</p></i></a>
+					</span>
 				</div>
+				<hr>
 				<div class="attendance">
-					<div class="child child--1"></div>
-					<div class="child child--1"></div>
-					<div class="child child--2"></div>
-					<div class="child child--1"></div>
-					<div class="child child--1"></div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
+					<div class="day">day</div>
 				</div>
-	    	</div>
-	    	
+			</div>
+			<div class="balance">
+				<div class="common">
+					<b>Balance</b>
+					<p>1 0000,00 / 3 lessons</p>
+				</div>
+				<div class="lessons">
+					<b>Lesson Attended</b>
+					<p>100</p>
+				</div>
+				<div class="payments">
+					<b>Payments</b>
+					<p>1</p>
+				</div>
+			</div>
 	    </div>
 	</div>
 </div>
